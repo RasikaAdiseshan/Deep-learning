@@ -1,0 +1,19 @@
+import numpy as np
+
+# Input dataset
+data = np.array([[0,0], [0,1], [1,0], [1,1]])
+
+# Weight vector as a 1D array
+wt = np.array([1,1])
+
+# User input for bias
+bias = int(input("Enter bias: "))
+
+# OR function using perceptron
+def OR(x, wt, bias):
+    fx = np.dot(x, wt) + bias  # Perform dot product correctly
+    return 1 if fx >= 0 else 0  # Activation function
+
+# Iterate over input data
+for i in range(len(data)):
+    print(f"Input: {i} => Output: {OR(data[i], wt, bias)}")
